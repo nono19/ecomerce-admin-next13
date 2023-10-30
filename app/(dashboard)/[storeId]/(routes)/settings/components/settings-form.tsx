@@ -15,6 +15,7 @@ import toast from "react-hot-toast"
 import { useParams, useRouter } from "next/navigation"
 import axios from "axios"
 import { AlertModal } from "@/components/modals/alert-modal"
+import { ApiAlert } from "@/components/ui/api-alert"
 
 interface SettingFormProps {
   initialData: Store;
@@ -112,6 +113,12 @@ export const SettingForm: React.FC<SettingFormProps> = ({
           <Button disabled={loading} className="ml-auto" type="submit">Save changes</Button>
         </form>
       </Form>
+      <Separator />
+      <ApiAlert
+        title="NEXT_PUBLIC_API_URL"
+        description={`${origin}/api/${params.storeId}`}
+        variant="public"
+      />
     </>
   )
 }
