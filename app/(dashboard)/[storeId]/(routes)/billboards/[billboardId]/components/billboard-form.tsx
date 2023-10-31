@@ -15,7 +15,6 @@ import toast from "react-hot-toast"
 import { useParams, useRouter } from "next/navigation"
 import axios from "axios"
 import { AlertModal } from "@/components/modals/alert-modal"
-import { useOrigin } from "@/hooks/use.origin"
 import ImageUpload from "@/components/ui/image-upload"
 
 interface BillboardFormProps {
