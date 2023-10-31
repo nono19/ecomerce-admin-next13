@@ -75,6 +75,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
       setLoading(true);
       await axios.delete(`/api/${params.storeId}/billboards/${params.billboardId}`);
       router.refresh();
+      router.push(`/${params.storeId}/billboards`);
       toast.success("billboard deleted")
     } catch (error) {
       toast.error("make sure you remove all categories using this billboard first");
@@ -150,7 +151,6 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
           <Button disabled={loading} className="ml-auto" type="submit">{action}</Button>
         </form>
       </Form>
-      <Separator />
     </>
   )
 }
